@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
-<title>EMS | Add Employee</title>
+<title>EMS | New Branch</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -23,10 +23,10 @@
 	  </button>
 	  <div class="collapse navbar-collapse" id="navbarText">
 	    <ul class="navbar-nav mr-auto">
-	       <li class="nav-item active">
+	      <li class="nav-item ">
 	         <a class="nav-link" href="/add-employee">New Employee</a>
 	      </li>
-	      <li class="nav-item ">
+	      <li class="nav-item active">
         	<a class="nav-link" href="/add-newbranch">New Branch</a>
       	</li>
 	      <li class="nav-item">
@@ -37,53 +37,40 @@
 	</nav>
 	<br>
 <div class="container text-center">
-				<h3>ADD NEW EMPLOYEE</h3>
+				<h3>ADD NEW BRANCH</h3>
 				<hr>
-				<form class="form-horizontal" method="POST" action="save-employee">
-					<input type="hidden" name="id" value="${employee.id }" />
+				<form class="form-horizontal" method="POST" action="save-branch">
+					<input type="hidden" name="id" value="${branch.id }" />
 				
 					<div class="form-group row">
-						<label class="control-label col-md-3">First Name</label>
+						<label class="control-label col-md-3">Branch Name</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="firstname"
-								value="${employee.firstName }" />
+							<input type="text" class="form-control" name="branchname"
+								value="${branch.name }" />
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="control-label col-md-3">Last Name</label>
+						<label class="control-label col-md-3">Region</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="lastname"
-								value="${employee.lastName }" />
+							<input type="text" class="form-control" name="region"
+								value="${branch.region}" />
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="control-label col-md-3">Email</label>
+						<label class="control-label col-md-3">Supervisor 1</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="email"
-								value="${employee.email }" />
+							<input type="text" class="form-control" name="supervisor1"
+								value="${branch.supervisor1 }" />
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="control-label col-md-3">Phone Number</label>
+						<label class="control-label col-md-3">Supervisor 2</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="telephone"
-								value="${employee.telephone }" />
+							<input type="text" class="form-control" name="supervisor2"
+								value="${branch.supervisor2}" />
 						</div>
 					</div>
-					<div class="form-group row">
-						<label class="control-label col-md-3">Address</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="address"
-								value="${employee.address }" />
-						</div>
-					</div>
-						<div class="form-group row">
-						<label class="control-label col-md-3">Branch</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="branch"
-								value="${employee.branch }" />
-						</div>
-					</div>
+					
 					<div class="form-group row">
 						<div class=" col-md-3"></div>
 						<div class="col-md-7"><input type="submit" class="btn btn-primary" value="SAVE" /></div>

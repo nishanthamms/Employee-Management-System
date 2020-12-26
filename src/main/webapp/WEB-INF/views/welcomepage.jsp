@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
-<title> EPMS | home</title>
+<title> EMS | home</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -17,20 +17,20 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Tecno-Tab</a>
+  <a class="navbar-brand" href="/">EMS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
+       <li class="nav-item ">
+	         <a class="nav-link" href="/add-employee">New Employee</a>
+	      </li>
+	      <li class="nav-item">
+        	<a class="nav-link" href="/add-newbranch">New Branch</a>
+      	</li>
       <li class="nav-item">
-        <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/add-employee">Add Employee</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/show-employee">All Users</a>
+        <a class="nav-link" href="/show-employee">Employee List</a>
       </li>
     </ul>
   </div>
@@ -38,8 +38,8 @@
 <br> 
 	<div class="container" id="homediv">
 				<div class="jumbotron text-center">
-					<h1>Welcome to Tecno</h1>
-					<h3>Subscribe my channel to support me</h3>
+					<h1>Welcome to EMPLOYEE MANAGEMENT SYSTEM</h1>
+					
 				</div>
 	</div>
 	
