@@ -17,6 +17,7 @@ import com.project.employee.entity.Branch;
 import com.project.employee.entity.Employee;
 import com.project.employee.entity.EmployeeContact;
 import com.project.employee.entity.Supervisor;
+import com.project.employee.entity.Project;
 import com.project.employee.services.EmployeeService;
 
 @Controller
@@ -45,19 +46,38 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/save-employee")
-	public String saveEmployee(@RequestParam String firstname,@RequestParam String lastname,@RequestParam String email,@RequestParam String telephone,@RequestParam String address) {
-		Employee employee = new Employee();
-		employee.setFirstName(firstname);
-		employee.setLastName(lastname);
-		EmployeeContact empcon  = new 	EmployeeContact();
-		empcon.setEmail(email);
-		empcon.setTelephone(telephone);
-		empcon.setAddress(address);
-		employee.setEmployeeContact(empcon);
-		empcon.setEmployee(employee);
+	public String saveEmployee(@RequestParam String firstname1,@RequestParam String lastname1,@RequestParam String email1,@RequestParam String telephone1,@RequestParam String address1,@RequestParam String project,
+								@RequestParam String firstname2,@RequestParam String lastname2,@RequestParam String email2,@RequestParam String telephone2,@RequestParam String address2) {
+		//Employee 01
+		Employee employee1 = new Employee();
+		employee1.setFirstName(firstname1);
+		employee1.setLastName(lastname1);
+		EmployeeContact empcon1  = new 	EmployeeContact();
+		empcon1.setEmail(email1);
+		empcon1.setTelephone(telephone1);
+		empcon1.setAddress(address1);
+		employee1.setEmployeeContact(empcon1);
+		empcon1.setEmployee(employee1);
 		
-		// Department department = new Department(department);
-		employeeService.saveEmployee(employee);
+		//Employee 02
+		Employee employee2 = new Employee();
+		employee2.setFirstName(firstname2);
+		employee2.setLastName(lastname2);
+		EmployeeContact empcon2  = new 	EmployeeContact();
+		empcon2.setEmail(email2);
+		empcon2.setTelephone(telephone2);
+		empcon2.setAddress(address2);
+		employee2.setEmployeeContact(empcon2);
+		empcon2.setEmployee(employee2);
+		
+		//Project
+		Project projt = new Project(project);
+		projt.getEmployee().add(employee1);
+		projt.getEmployee().add(employee2);
+		
+		employeeService.saveEmployee(employee1);
+		employeeService.saveEmployee(employee2);
+		employeeService.saveProject(projt);
 		return "welcomepage";
 	}
 

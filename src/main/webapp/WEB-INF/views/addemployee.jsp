@@ -39,56 +39,117 @@
 <div class="container text-center">
 				<h3>ADD NEW EMPLOYEE</h3>
 				<hr>
-				<form class="form-horizontal" method="POST" action="save-employee">
-					<input type="hidden" name="id" value="${employee.id }" />
+			<form class="form-horizontal" method="POST" action="save-employee">
+					<div class="form-group row">
+						<label class="control-label col-md-3">Project</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="project"
+								value="${employee.project }" />
+						</div>
+					</div>
+				<div class="row">
+					<div class="col-md-6">
+						<h4>Employee 1</h4>
+						<!-- input type="hidden" name="id" value="${employee.id }" /-->
 				
-					<div class="form-group row">
-						<label class="control-label col-md-3">First Name</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="firstname"
-								value="${employee.firstName }" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-md-3">Last Name</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="lastname"
-								value="${employee.lastName }" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-md-3">Email</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="email"
-								value="${employee.email }" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-md-3">Phone Number</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="telephone"
-								value="${employee.telephone }" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-md-3">Address</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="address"
-								value="${employee.address }" />
-						</div>
-					</div>
 						<div class="form-group row">
-						<label class="control-label col-md-3">Branch</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="branch"
-								value="${employee.branch }" />
+							<label class="control-label col-md-3">First Name</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="firstname1"
+									value="${employee.firstName }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Last Name</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="lastname1"
+									value="${employee.lastName }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Email</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="email1"
+									value="${employee.email }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Phone Number</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="telephone1"
+									value="${employee.telephone }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Address</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="address1"
+									value="${employee.address }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Branch</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="branch1"
+									value="${employee.branch }" />
+							</div>
 						</div>
 					</div>
-					<div class="form-group row">
-						<div class=" col-md-3"></div>
-						<div class="col-md-7"><input type="submit" class="btn btn-primary" value="SAVE" /></div>
+					<div class="col-md-6">
+								<h4>Employee 2</h4>
+						<!--  input type="hidden" name="id" value="${employee.id }" /-->
+				
+						<div class="form-group row">
+							<label class="control-label col-md-3">First Name</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="firstname2"
+									value="${employee.firstName }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Last Name</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="lastname2"
+									value="${employee.lastName }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Email</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="email2"
+									value="${employee.email }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Phone Number</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="telephone2"
+									value="${employee.telephone }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Address</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="address2"
+									value="${employee.address }" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="control-label col-md-3">Branch</label>
+							<div class="col-md-7">
+								<input type="text" class="form-control" name="branch2"
+									value="${employee.branch }" />
+							</div>
+						</div>
 					</div>
-				</form>
+				</div>				
+				
+				<div class="form-group row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8"><input type="submit" class="btn btn-primary btn-block" value="SAVE" /></div>
+					<div class="col-md-2"></div>
+				</div>
+			</form>
 		</div>
     <!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
