@@ -33,6 +33,7 @@ public class EmployeeController {
 	}
 	@RequestMapping("/add-employee")
 	public String addEmployee(HttpServletRequest request) {
+		request.setAttribute("branches",employeeService.showAllBranches());
 		return "addemployee";
 	}
 	@RequestMapping("/add-newbranch")

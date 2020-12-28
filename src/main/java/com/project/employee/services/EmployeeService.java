@@ -45,6 +45,14 @@ public class EmployeeService {
 		}
 		return employees;
 	}
+	public List<Branch> showAllBranches(){
+		List<Branch> branches = new ArrayList<Branch>();
+	
+		for(Branch branch:branchRepository.findAll()) {
+			branches.add(branch);
+		}
+		return branches;
+	}
 	public void saveEmployee(Employee employee) {
 		employeeRepository.save(employee);	
 		

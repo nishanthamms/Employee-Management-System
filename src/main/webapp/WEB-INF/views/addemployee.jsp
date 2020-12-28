@@ -1,4 +1,5 @@
 <!DOCTYPE html >
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -90,10 +91,19 @@
 						<div class="form-group row">
 							<label class="control-label col-md-3">Branch</label>
 							<div class="col-md-7">
-								<input type="text" class="form-control" name="branch1"
-									value="${employee.branch }" />
+								<!--input type="text" class="form-control" name="branch1"
+									value="${employee.branch }" /-->
+									<select class="form-control" id="sel1" name="branch1">
+										<c:forEach var="branch" items="${branches}">
+										    <option>${branch.name}</option>
+										    
+									    </c:forEach>
+						  			</select>
 							</div>
+							
+						  
 						</div>
+						
 					</div>
 					<div class="col-md-6">
 								<h4>Employee 2</h4>
@@ -137,8 +147,14 @@
 						<div class="form-group row">
 							<label class="control-label col-md-3">Branch</label>
 							<div class="col-md-7">
-								<input type="text" class="form-control" name="branch2"
-									value="${employee.branch }" />
+								<!--input type="text" class="form-control" name="branch2"
+									value="${employee.branch }" /-->
+									<select class="form-control" id="sel1" name="branch2">
+										<c:forEach var="branch" items="${branches}">
+										    <option>${branch.name}</option>
+										    
+									    </c:forEach>
+						  			</select>
 							</div>
 						</div>
 					</div>
