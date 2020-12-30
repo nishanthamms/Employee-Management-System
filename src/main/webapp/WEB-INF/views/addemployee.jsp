@@ -26,13 +26,16 @@
 	    <ul class="navbar-nav mr-auto">
 	       <li class="nav-item active">
 	         <a class="nav-link" href="/add-employee">New Employee</a>
-	      </li>
-	      <li class="nav-item ">
+	       </li>
+	       <li class="nav-item ">
         	<a class="nav-link" href="/add-newbranch">New Branch</a>
-      	</li>
-	      <li class="nav-item">
+      	   </li>
+	       <li class="nav-item">
 	        <a class="nav-link" href="/show-employee">Employee List</a>
-	      </li>
+	       </li>  
+	       <li class="nav-item">
+	        <a class="nav-link" href="/show-supervisor">Supervisor List</a>
+	       </li>    
 	    </ul>
 	  </div>
 	</nav>
@@ -93,10 +96,9 @@
 							<div class="col-md-7">
 								<!--input type="text" class="form-control" name="branch1"
 									value="${employee.branch }" /-->
-									<select class="form-control" id="sel1" name="branch1">
+									<select class="form-control"  name="branch1">
 										<c:forEach var="branch" items="${branches}">
-										    <option>${branch.name}</option>
-										    
+										    <option value="<c:out value="${branch.id}"/>"><c:out value="${branch.name}"/></option>
 									    </c:forEach>
 						  			</select>
 							</div>
@@ -151,8 +153,7 @@
 									value="${employee.branch }" /-->
 									<select class="form-control" id="sel1" name="branch2">
 										<c:forEach var="branch" items="${branches}">
-										    <option>${branch.name}</option>
-										    
+										    <option value="<c:out value="${branch.id}"/>"><c:out value="${branch.name}"/></option>									    
 									    </c:forEach>
 						  			</select>
 							</div>

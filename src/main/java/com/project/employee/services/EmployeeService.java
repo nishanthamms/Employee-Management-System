@@ -3,21 +3,18 @@ package com.project.employee.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
 import com.project.employee.entity.Branch;
 import com.project.employee.entity.Employee;
+import com.project.employee.entity.Supervisor;
 import com.project.employee.entity.Project;
-import com.project.employee.entity.EmployeeContact;
-import com.project.employee.repository.EmployeeContactRepository;
 import com.project.employee.repository.EmployeeRepository;
 import com.project.employee.repository.BranchRepository;
 import com.project.employee.repository.ProjectRepository;
-
+import com.project.employee.repository.SupervisorRepository;
 
 
 @Service
@@ -25,15 +22,15 @@ import com.project.employee.repository.ProjectRepository;
 public class EmployeeService {
 
 	private final EmployeeRepository employeeRepository;
-	private final EmployeeContactRepository employeeContactRepository; 
 	private final ProjectRepository projectRepository;
 	private final BranchRepository branchRepository;
+	private final SupervisorRepository supervisorRepository;
 	
-	public EmployeeService (EmployeeRepository employeeRepository, EmployeeContactRepository employeeContactRepository,ProjectRepository projectRepository,BranchRepository branchRepository) {
+	public EmployeeService (EmployeeRepository employeeRepository,ProjectRepository projectRepository,BranchRepository branchRepository,SupervisorRepository supervisorRepository) {
 		this.employeeRepository = employeeRepository;
-		this.employeeContactRepository = employeeContactRepository;
 		this.projectRepository = projectRepository;
 		this.branchRepository = branchRepository;
+		this.supervisorRepository =supervisorRepository;
 	}
 	
 	
@@ -45,6 +42,14 @@ public class EmployeeService {
 		}
 		return employees;
 	}
+	public List<Supervisor> showAllSupervisors(){
+		List<Supervisor> supervisors = new ArrayList<Supervisor>();
+	
+		for(Supervisor supervisor:supervisorRepository.findAll()) {
+			supervisors.add(supervisor);
+		}
+		return supervisors;
+	}
 	public List<Branch> showAllBranches(){
 		List<Branch> branches = new ArrayList<Branch>();
 	
@@ -53,7 +58,10 @@ public class EmployeeService {
 		}
 		return branches;
 	}
-	public void saveEmployee(Employee employee) {
+	public void saveEmployee(Employee employee,int brnchId) {
+		Branch branch = branchRepository.findById(brnchId).get();
+		employee.setBranch(branch);
+		branch.getEmployees().add(employee);
 		employeeRepository.save(employee);	
 		
 	}

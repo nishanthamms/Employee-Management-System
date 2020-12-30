@@ -1,5 +1,8 @@
 package com.project.employee.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -36,10 +40,15 @@ public class Employee  {
 
 
 	
-
+	@ManyToOne(cascade=CascadeType.MERGE)
+	@JoinColumn(name="branch_id",nullable=false)
+	
+	private Branch branch;
+	
 	public Employee() {
 		
 	}
+
 	public Employee(String firstName, String lastName) {
 		super();
 		
@@ -54,6 +63,7 @@ public class Employee  {
 		this.id = id;
 	}
 
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -77,10 +87,19 @@ public class Employee  {
 	public void setEmployeeContact(EmployeeContact employeeContact) {
 		this.employeeContact = employeeContact;
 	}
+	
+	public Branch getBranch() {
+		return branch;
+	}
+
+	public void setBranch(Branch branch) {
+		this.branch = branch;
+	}
+
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", employeeContact="
-				+ employeeContact + "]";
+				+ employeeContact + ", branch=" + branch + "]";
 	}
 
 

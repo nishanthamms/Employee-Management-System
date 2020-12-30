@@ -28,10 +28,13 @@
 	      </li>
 	      <li class="nav-item active">
         	<a class="nav-link" href="/add-newbranch">New Branch</a>
-      	</li>
+      	  </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="/show-employee">Employee List</a>
 	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="/show-supervisor">Supervisor List</a>
+	      </li> 
 	    </ul>
 	  </div>
 	</nav>

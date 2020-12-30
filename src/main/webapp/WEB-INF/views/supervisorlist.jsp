@@ -7,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
-<title>EMS | Employee List</title>
+<title>EMS | Supervisor List</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,43 +24,38 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      
+    <ul class="navbar-nav mr-auto">   
        <li class="nav-item ">
 	         <a class="nav-link" href="/add-employee">New Employee</a>
-	      </li>
-	      <li class="nav-item ">
+	    </li>
+	    <li class="nav-item ">
         	<a class="nav-link" href="/add-newbranch">New Branch</a>
       	</li>
-      <li class="nav-item active active">
-        <a class="nav-link" href="/show-user">Employee List</a>
-      </li>
+      	<li class="nav-item">
+       		 <a class="nav-link" href="/show-employee">Employee List</a>
+      	</li>
+      	<li class="nav-item active">
+	        <a class="nav-link" href="/show-supervisor">Supervisor List</a>
+	    </li> 
     </ul>
   </div>
 </nav>
 <br> 
 	<div class="container text-center" id="tasksDiv">
-				<h3>EMPLOYEE LIST</h3>
+				<h3>SUPERVISOR LIST</h3>
 				<hr>
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered">
 						<thead>
 							<tr>
-								<th>Id</th>
-								
-								<th>First Name</th>
-								<th>LastName</th>
-								<!--th>Age</th>
-								<th>Delete</th>
-								<th>Edit</th-->
-							</tr>
+								<th>Id</th>							
+								<th>Name</th>
 						</thead>
 						<tbody>
-							<c:forEach var="employee" items="${employees}">
+							<c:forEach var="supervisor" items="${supervisors}">
 								<tr>
-									<td>${employee.id}</td>
-									<td>${employee.firstName}</td>
-									<td>${employee.lastName}</td>
+									<td>${supervisor.id}</td>
+									<td>${supervisor.name}</td>
 									
 									<!--  >td>${user.age}</td> 
 									<td><a href="/delete-user?id=${user.id }"><i class="fa fa-trash"></i></a></td>

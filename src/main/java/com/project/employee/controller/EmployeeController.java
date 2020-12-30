@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.employee.entity.Branch;
@@ -43,12 +42,17 @@ public class EmployeeController {
 	@GetMapping("/show-employee")
 	public String showAllEmployee(HttpServletRequest request) {
 		request.setAttribute("employees",employeeService.showAllEmployees());
-		return "userlist";
+		return "employeelist";
+	}
+	@GetMapping("/show-supervisor")
+	public String showAllSupervisor(HttpServletRequest request) {
+		request.setAttribute("supervisors",employeeService.showAllSupervisors());
+		return "supervisorlist";
 	}
 
 	@PostMapping("/save-employee")
 	public String saveEmployee(@RequestParam String firstname1,@RequestParam String lastname1,@RequestParam String email1,@RequestParam String telephone1,@RequestParam String address1,@RequestParam String project,
-								@RequestParam String firstname2,@RequestParam String lastname2,@RequestParam String email2,@RequestParam String telephone2,@RequestParam String address2) {
+								@RequestParam String firstname2,@RequestParam String lastname2,@RequestParam String email2,@RequestParam String telephone2,@RequestParam String address2,@RequestParam int branch1,@RequestParam int branch2) {
 		//Employee 01
 		Employee employee1 = new Employee();
 		employee1.setFirstName(firstname1);
@@ -76,8 +80,14 @@ public class EmployeeController {
 		projt.getEmployee().add(employee1);
 		projt.getEmployee().add(employee2);
 		
-		employeeService.saveEmployee(employee1);
-		employeeService.saveEmployee(employee2);
+		//branch 
+		Branch brnch1 = new Branch(branch1);
+		Branch brnch2 = new Branch(branch2);
+		int branch1Id = brnch1.getId();
+		int branch2Id = brnch2.getId();
+		//services
+		employeeService.saveEmployee(employee1,branch1Id);
+		employeeService.saveEmployee(employee2,branch2Id);
 		employeeService.saveProject(projt);
 		return "welcomepage";
 	}

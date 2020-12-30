@@ -1,6 +1,8 @@
 package com.project.employee.entity;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,7 +15,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 
 
@@ -31,9 +36,7 @@ public class Branch {
 	@Column(name = "region")
     private String region;
 	
-	public int getId() {
-		return id;
-	}
+	
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "branch_supervisor",
@@ -41,14 +44,26 @@ public class Branch {
 		inverseJoinColumns = { @JoinColumn (name = "supervisor_id")})
 	private Set<Supervisor> supervisors = new HashSet<>();
 	
+	
+	@OneToMany(mappedBy="branch", fetch = FetchType.EAGER)
+    private Set<Employee> employees = new HashSet<>();
+	
 	public Branch() {}
 	
+
 	public Branch(String name, String region) {
 		super();
 		this.name = name;
 		this.region = region;
 	}
-
+	public Branch(int id) {
+		super();
+		this.id = id;	
+	}
+	
+	public int getId() {
+		return id;
+	}
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -76,8 +91,14 @@ public class Branch {
 	public void setSupervisors(Set<Supervisor> supervisors) {
 		this.supervisors = supervisors;
 	}
-
 	
+	public Set<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(Set<Employee> employees) {
+		this.employees = employees;
+	}
 	
 	
 }
