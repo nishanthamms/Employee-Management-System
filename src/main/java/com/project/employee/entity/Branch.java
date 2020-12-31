@@ -38,7 +38,7 @@ public class Branch {
 	
 	
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinTable(name = "branch_supervisor",
 		joinColumns = { @JoinColumn(name = "branch_id")},
 		inverseJoinColumns = { @JoinColumn (name = "supervisor_id")})

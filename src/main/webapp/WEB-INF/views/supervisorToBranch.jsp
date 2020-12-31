@@ -1,4 +1,5 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -6,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
-<title>EMS | New Branch</title>
+<title>EMS | Supervisor To Branch</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -29,10 +30,10 @@
 	        <li class="nav-item">
         	<a class="nav-link" href="/add-newsupervisor">New Supervisor</a>
       	  </li>
-      	   <li class="nav-item active">
+      	   <li class="nav-item">
         	<a class="nav-link" href="/add-newbranch">New Branch</a>
       	  </li>
-	      <li class="nav-item ">
+	      <li class="nav-item active">
         	<a class="nav-link" href="/supervisor-to-branch">Assign Supervisors to Branch</a>
       	  </li>
 	      <li class="nav-item">
@@ -46,26 +47,46 @@
 	</nav>
 	<br>
 <div class="container text-center">
-				<h3>ADD NEW BRANCH</h3>
+				<h3>ASSIGN SUPERVISORS TO BRANCH</h3>
 				<hr>
-				<form class="form-horizontal" method="POST" action="save-branch">
+				<form class="form-horizontal" method="POST" action="save-supervisor-to-branch">
 					<input type="hidden" name="id" value="${branch.id }" />
 				
 					<div class="form-group row">
 						<label class="control-label col-md-3 text-left">Branch Name</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="branchname"
-								value="${branch.name }" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-md-3 text-left">Region</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="region"
-								value="${branch.region}" />
+							<select class="form-control"  name="branchId">
+								<option>Select Branch</option>
+								<c:forEach var="branch" items="${branches}">
+									<option value="<c:out value="${branch.id}"/>"><c:out value="${branch.name}"/></option>
+								</c:forEach>
+						  	</select>
 						</div>
 					</div>
 				
+					<div class="form-group row">
+						<label class="control-label col-md-3 text-left">Supervisor 1</label>
+						<div class="col-md-7">
+							<select class="form-control"  name="supervisor1">
+								<option>Select Supervisor</option>
+								<c:forEach var="supervisor" items="${supervisors}">
+									<option value="<c:out value="${supervisor.id}"/>"><c:out value="${supervisor.name}"/></option>
+								</c:forEach>
+						  	</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="control-label col-md-3 text-left">Supervisor 2</label>
+						<div class="col-md-7">
+							
+							<select class="form-control"  name="supervisor2">
+								<option>Select Supervisor</option>
+								<c:forEach var="supervisor" items="${supervisors}">
+									<option value="<c:out value="${supervisor.id}"/>"><c:out value="${supervisor.name}"/></option>
+								</c:forEach>
+						  	</select>
+						</div>
+					</div>
 					
 					<div class="form-group row">
 						<div class=" col-md-5"></div>

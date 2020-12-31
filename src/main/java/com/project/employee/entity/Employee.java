@@ -41,9 +41,12 @@ public class Employee  {
 
 	
 	@ManyToOne(cascade=CascadeType.MERGE)
-	@JoinColumn(name="branch_id",nullable=false)
-	
+	@JoinColumn(name="branch_id",nullable=false)	
 	private Branch branch;
+	
+	@ManyToOne(fetch = FetchType.LAZY ,cascade=CascadeType.ALL)
+	@JoinColumn(name="project_id",nullable=true)	
+	private Project project;
 	
 	public Employee() {
 		
@@ -96,10 +99,18 @@ public class Employee  {
 		this.branch = branch;
 	}
 
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", employeeContact="
-				+ employeeContact + ", branch=" + branch + "]";
+				+ employeeContact + ", branch=" + branch + ", project=" + project + "]";
 	}
 
 

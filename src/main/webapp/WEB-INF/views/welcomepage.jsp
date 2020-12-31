@@ -26,8 +26,14 @@
        <li class="nav-item ">
 	        <a class="nav-link" href="/add-employee">New Employee</a>
 	   </li>
-	    <li class="nav-item">
+	   <li class="nav-item">
+        	<a class="nav-link" href="/add-newsupervisor">New Supervisor</a>
+        </li>
+         <li class="nav-item">
         	<a class="nav-link" href="/add-newbranch">New Branch</a>
+      	 </li>
+	    <li class="nav-item">
+        	<a class="nav-link" href="/supervisor-to-branch">Assign Supervisors to Branch</a>
       	</li>
       <li class="nav-item">
         	<a class="nav-link" href="/show-employee">Employee List</a>

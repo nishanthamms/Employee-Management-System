@@ -25,7 +25,7 @@ public class Supervisor {
 	@Column(name = "name")
     private String name;
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "supervisors")
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, mappedBy = "supervisors")
 	private Set<Branch> branches = new HashSet<>();
 	
 	public Supervisor() {
@@ -35,7 +35,10 @@ public class Supervisor {
 		super();
 		this.name = name;
 	}
-
+	public Supervisor(int id) {
+		super();
+		this.id = id;
+	}
 	public int getId() {
 		return id;
 	}

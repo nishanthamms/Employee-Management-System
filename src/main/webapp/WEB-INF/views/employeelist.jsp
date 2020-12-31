@@ -28,8 +28,14 @@
        <li class="nav-item ">
 	        <a class="nav-link" href="/add-employee">New Employee</a>
 	   </li>
+	    <li class="nav-item">
+        	<a class="nav-link" href="/add-newsupervisor">New Supervisor</a>
+       </li>
+        <li class="nav-item">
+        	<a class="nav-link" href="/add-newbranch">New Branch</a>
+      	</li>
 	   <li class="nav-item ">
-           <a class="nav-link" href="/add-newbranch">New Branch</a>
+           <a class="nav-link" href="/supervisor-to-branch">Assign Supervisors to Branch</a>
        </li>
       <li class="nav-item active active">
         	<a class="nav-link" href="/show-employee">Employee List</a>
@@ -45,16 +51,17 @@
 				<h3>EMPLOYEE LIST</h3>
 				<hr>
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered">
+					<table class="table  table-bordered table-hover">
 						<thead>
-							<tr>
-								<th>Id</th>
-								
+							<tr class="bg-info">
+								<th>Id</th>					
 								<th>First Name</th>
 								<th>LastName</th>
-								<!--th>Age</th>
+								<th>Address</th>
+								<th>Email</th>
+								<th>Telephone</th>
+								<th>Working Project</th>
 								<th>Delete</th>
-								<th>Edit</th-->
 							</tr>
 						</thead>
 						<tbody>
@@ -63,7 +70,11 @@
 									<td>${employee.id}</td>
 									<td>${employee.firstName}</td>
 									<td>${employee.lastName}</td>
-									
+									<td>${employee.address}</td>
+									<td>${employee.email}</td>
+									<td>${employee.telephone}</td>
+									<td>${employee.projectName}</td>
+									<td><a href="/delete-employee?id=${employee.id }"><i class="fa fa-trash"></i></a></td>
 									<!--  >td>${user.age}</td> 
 									<td><a href="/delete-user?id=${user.id }"><i class="fa fa-trash"></i></a></td>
 									<!-- >td><a href="/edit-user?id=${user.id }"><i class="fa fa-edit"></i></a></td->

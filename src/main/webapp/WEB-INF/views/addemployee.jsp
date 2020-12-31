@@ -27,8 +27,14 @@
 	       <li class="nav-item active">
 	         <a class="nav-link" href="/add-employee">New Employee</a>
 	       </li>
-	       <li class="nav-item ">
+	       <li class="nav-item">
+        	<a class="nav-link" href="/add-newsupervisor">New Supervisor</a>
+      	  </li>
+      	   <li class="nav-item">
         	<a class="nav-link" href="/add-newbranch">New Branch</a>
+      	  </li>
+	       <li class="nav-item ">
+        	<a class="nav-link" href="/supervisor-to-branch">Assign Supervisors to Branch</a>
       	   </li>
 	       <li class="nav-item">
 	        <a class="nav-link" href="/show-employee">Employee List</a>
@@ -57,46 +63,45 @@
 						<!-- input type="hidden" name="id" value="${employee.id }" /-->
 				
 						<div class="form-group row">
-							<label class="control-label col-md-3">First Name</label>
+							<label class="control-label col-md-3 text-left">First Name</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="firstname1"
 									value="${employee.firstName }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Last Name</label>
+							<label class="control-label col-md-3 text-left">Last Name</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="lastname1"
 									value="${employee.lastName }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Email</label>
+							<label class="control-label col-md-3 text-left">Email</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="email1"
 									value="${employee.email }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Phone Number</label>
+							<label class="control-label col-md-3 text-left">Phone Number</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="telephone1"
 									value="${employee.telephone }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Address</label>
+							<label class="control-label col-md-3 text-left">Address</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="address1"
 									value="${employee.address }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Branch</label>
+							<label class="control-label col-md-3 text-left">Branch</label>
 							<div class="col-md-7">
-								<!--input type="text" class="form-control" name="branch1"
-									value="${employee.branch }" /-->
 									<select class="form-control"  name="branch1">
+										<option>Select Branch</option>
 										<c:forEach var="branch" items="${branches}">
 										    <option value="<c:out value="${branch.id}"/>"><c:out value="${branch.name}"/></option>
 									    </c:forEach>
@@ -112,46 +117,45 @@
 						<!--  input type="hidden" name="id" value="${employee.id }" /-->
 				
 						<div class="form-group row">
-							<label class="control-label col-md-3">First Name</label>
+							<label class="control-label col-md-3 text-left">First Name</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="firstname2"
 									value="${employee.firstName }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Last Name</label>
+							<label class="control-label col-md-3 text-left">Last Name</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="lastname2"
 									value="${employee.lastName }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Email</label>
+							<label class="control-label col-md-3 text-left">Email</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="email2"
 									value="${employee.email }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Phone Number</label>
+							<label class="control-label col-md-3 text-left">Phone Number</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="telephone2"
 									value="${employee.telephone }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Address</label>
+							<label class="control-label col-md-3 text-left">Address</label>
 							<div class="col-md-7">
 								<input type="text" class="form-control" name="address2"
 									value="${employee.address }" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="control-label col-md-3">Branch</label>
+							<label class="control-label col-md-3 text-left">Branch</label>
 							<div class="col-md-7">
-								<!--input type="text" class="form-control" name="branch2"
-									value="${employee.branch }" /-->
 									<select class="form-control" id="sel1" name="branch2">
+										<option>Select Branch</option>
 										<c:forEach var="branch" items="${branches}">
 										    <option value="<c:out value="${branch.id}"/>"><c:out value="${branch.name}"/></option>									    
 									    </c:forEach>

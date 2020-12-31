@@ -28,8 +28,14 @@
        <li class="nav-item ">
 	         <a class="nav-link" href="/add-employee">New Employee</a>
 	    </li>
-	    <li class="nav-item ">
+	    <li class="nav-item">
+        	<a class="nav-link" href="/add-newsupervisor">New Supervisor</a>
+      	</li>
+      	 <li class="nav-item">
         	<a class="nav-link" href="/add-newbranch">New Branch</a>
+      	 </li>
+	    <li class="nav-item ">
+        	<a class="nav-link" href="/supervisor-to-branch">Assign Supervisors to Branch</a>
       	</li>
       	<li class="nav-item">
        		 <a class="nav-link" href="/show-employee">Employee List</a>
@@ -45,18 +51,20 @@
 				<h3>SUPERVISOR LIST</h3>
 				<hr>
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered">
+					<table class="table  table-bordered table-hover">
 						<thead>
-							<tr>
-								<th>Id</th>							
+							<tr class="bg-info">					
 								<th>Name</th>
+								<th>Branch Name</th>								
+								<th>Region</th>	
+							</tr>						
 						</thead>
 						<tbody>
 							<c:forEach var="supervisor" items="${supervisors}">
-								<tr>
-									<td>${supervisor.id}</td>
+								<tr>								
 									<td>${supervisor.name}</td>
-									
+									<td>${supervisor.branchName}</td>
+									<td>${supervisor.region}</td>
 									<!--  >td>${user.age}</td> 
 									<td><a href="/delete-user?id=${user.id }"><i class="fa fa-trash"></i></a></td>
 									<!-- >td><a href="/edit-user?id=${user.id }"><i class="fa fa-edit"></i></a></td->

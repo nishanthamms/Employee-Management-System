@@ -35,6 +35,16 @@ public class EmployeeController {
 		request.setAttribute("branches",employeeService.showAllBranches());
 		return "addemployee";
 	}
+	@RequestMapping("/supervisor-to-branch")
+	public String addsupervisorToBranch(HttpServletRequest request) {
+		request.setAttribute("branches",employeeService.showAllBranches());
+		request.setAttribute("supervisors",employeeService.showSupervisors());	
+		return "supervisorToBranch";
+	}
+	@RequestMapping("/add-newsupervisor")
+	public String addNewSupervisor(HttpServletRequest request) {
+		return "addnewsupervisor";
+	}
 	@RequestMapping("/add-newbranch")
 	public String addNewBranch(HttpServletRequest request) {
 		return "addnewbranch";
@@ -92,10 +102,10 @@ public class EmployeeController {
 		return "welcomepage";
 	}
 
-	@PostMapping("/save-branch")
-	public String saveBranch(@RequestParam String branchname,@RequestParam String region,@RequestParam String supervisor1,@RequestParam String supervisor2) {
+	@PostMapping("/save-supervisor-to-branch")
+	public String saveBranch(@RequestParam int branchId,@RequestParam int supervisor1,@RequestParam int supervisor2) {
 		
-		Branch branch = new Branch(branchname,region);
+	/*	Branch branch = new Branch(branchId);
 		Supervisor supervisor01 = new Supervisor(supervisor1);
 		Supervisor supervisor02 = new Supervisor(supervisor2);
 		
@@ -105,7 +115,31 @@ public class EmployeeController {
 		supervisor01.getBranches().add(branch);
 		supervisor02.getBranches().add(branch);
 		
-		employeeService.saveBranch(branch);
+		employeeService.saveBranch(branch);*/
+		Branch branch = new Branch(branchId);
+		Supervisor supervisor01 = new Supervisor(supervisor1);
+		Supervisor supervisor02 = new Supervisor(supervisor2);
+		employeeService.saveSupervisorToBranch(branch,supervisor01,supervisor02);
+		return "welcomepage";
+	}
+	
+	@PostMapping("/save-supervisor")
+	public String saveSupervisor(@RequestParam String supervisorname) {
+		Supervisor supervisor = new Supervisor(supervisorname);
+		employeeService.saveSupervisor(supervisor);
+		return "welcomepage";
+	}
+	@PostMapping("/save-branch")
+	public String saveNewBranch(@RequestParam String branchname,@RequestParam String region) {
+		
+		Branch branch = new Branch(branchname,region);
+			
+		employeeService.saveNewBranch(branch);
+		return "welcomepage";
+	}
+	@RequestMapping("/delete-employee")
+	public String deleteUser(@RequestParam int id,HttpServletRequest request) {
+		employeeService.deleteEmployee(id);
 		return "welcomepage";
 	}
 }

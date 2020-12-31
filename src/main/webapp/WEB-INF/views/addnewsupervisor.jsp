@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
-<title>EMS | New Branch</title>
+<title>EMS | New Supervisor</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -26,13 +26,13 @@
 	      <li class="nav-item ">
 	         <a class="nav-link" href="/add-employee">New Employee</a>
 	      </li>
-	        <li class="nav-item">
+	       <li class="nav-item active">
         	<a class="nav-link" href="/add-newsupervisor">New Supervisor</a>
       	  </li>
-      	   <li class="nav-item active">
+      	  <li class="nav-item">
         	<a class="nav-link" href="/add-newbranch">New Branch</a>
       	  </li>
-	      <li class="nav-item ">
+	      <li class="nav-item">
         	<a class="nav-link" href="/supervisor-to-branch">Assign Supervisors to Branch</a>
       	  </li>
 	      <li class="nav-item">
@@ -46,23 +46,16 @@
 	</nav>
 	<br>
 <div class="container text-center">
-				<h3>ADD NEW BRANCH</h3>
+				<h3>ADD NEW SUPERVISOR</h3>
 				<hr>
-				<form class="form-horizontal" method="POST" action="save-branch">
-					<input type="hidden" name="id" value="${branch.id }" />
+				<form class="form-horizontal" method="POST" action="save-supervisor">
+					<input type="hidden" name="id" value="${supervisor.id }" />
 				
 					<div class="form-group row">
-						<label class="control-label col-md-3 text-left">Branch Name</label>
+						<label class="control-label col-md-3">Supervisor Name</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="branchname"
-								value="${branch.name }" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<label class="control-label col-md-3 text-left">Region</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="region"
-								value="${branch.region}" />
+							<input type="text" class="form-control" name="supervisorname"
+								value="${supervisor.name }" />
 						</div>
 					</div>
 				
