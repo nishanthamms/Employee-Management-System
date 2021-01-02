@@ -18,8 +18,8 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">EMS</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <a class="navbar-brand" href="/"><b>EMS</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -53,7 +53,7 @@
 				<div class="table-responsive">
 					<table class="table  table-bordered table-hover">
 						<thead>
-							<tr class="bg-info">					
+							<tr class="bg-light">					
 								<th>Name</th>
 								<th>Branch Name</th>								
 								<th>Region</th>	
@@ -75,7 +75,9 @@
 					</table>
 				</div>
 			</div>
-	
+	<div class="bg-secondary  footer ">
+	  <p class="text-center txtfooter">Copyright © 2021 CST17049 | All rights reserved.</p>
+	</div>
 	
 	 <!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

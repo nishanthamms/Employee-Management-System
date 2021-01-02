@@ -16,8 +16,8 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">EMS</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <a class="navbar-brand" href="/"><b>EMS</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -45,13 +45,40 @@
   </div>
 </nav>
 <br> 
-	<div class="container" id="homediv">
-				<div class="jumbotron text-center">
-					<h1>Welcome to EMPLOYEE MANAGEMENT SYSTEM</h1>
-					
-				</div>
-	</div>
+<h3 class="text-center"><b>WELCOME TO EMPLOYEE MANAGEMENT SYSTEM</b></h3>
+<hr>
 	
+</br>
+<div class="container" id="home">
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="static/img/1.jpg" alt="pic1" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="static/img/2.jpg" alt="pic2" width="1100" height="500"> 
+    </div>
+    <div class="carousel-item">
+      <img src="static/img/3.jpg" alt="pic2" width="1100" height="500"> 
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+</div>
+<br>
+<div class="bg-secondary  footer ">
+  <p class="text-center txtfooter">Copyright © 2021 CST17049 | All rights reserved.</p>
+</div>
 	 <!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="static/js/jquery-3.5.1.min.js"></script>

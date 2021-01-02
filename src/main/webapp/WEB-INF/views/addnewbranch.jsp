@@ -16,8 +16,8 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	  <a class="navbar-brand" href="/">EMS</a>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+	  <a class="navbar-brand" href="/"><b>EMS</b></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -73,6 +73,9 @@
 						<div class=" col-md-4"></div>
 					</div>
 				</form>
+		</div>
+		<div class="bg-secondary  footer ">
+  			<p class="text-center txtfooter">Copyright © 2021 CST17049 | All rights reserved.</p>
 		</div>
     <!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
