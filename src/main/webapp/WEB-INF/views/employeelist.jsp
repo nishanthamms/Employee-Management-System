@@ -74,11 +74,11 @@
 									<td>${employee.email}</td>
 									<td>${employee.telephone}</td>
 									<td>${employee.projectName}</td>
-									<td><a href="/delete-employee?id=${employee.id }"><i class="fa fa-trash iconcolor"></i></a></td>
-									<!--  >td>${user.age}</td> 
-									<td><a href="/delete-user?id=${user.id }"><i class="fa fa-trash"></i></a></td>
-									<!-- >td><a href="/edit-user?id=${user.id }"><i class="fa fa-edit"></i></a></td->
-									<td><a href="/edit-user?id=${user.id} "><i class="fa fa-edit"></i></a></td-->
+								  <c:if test="${employee.id%2!=0}">
+									<td rowspan="2">						
+										<a href="/delete-employee?id=${employee.id}"><i class="fa fa-trash iconcolor"></i></a>									
+									</td>
+								  </c:if>
 								</tr>
 							</c:forEach>
 						</tbody>
