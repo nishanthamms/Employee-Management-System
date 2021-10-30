@@ -1,4 +1,4 @@
-<h1>Employee-project-Management-System</h1>
+<h1>Employee Management System</h1>
 
 <p>
 This project is a simple Employee management system. There is a company which have several
